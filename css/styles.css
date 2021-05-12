@@ -16,14 +16,19 @@ body {
     "main main";
 }
 
-.header,
-.profile-wrap{
+.header {
   grid-area: header;
   background-color: #7851a9;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  grid-template-rows: 0.25fr;
+  gap: 0 0;
   align-content: center;
+  align-items: center;
+  grid-template-areas:
+    "header header header";
 }
+
 
 .profile-wrap {
   display: flex;
@@ -32,6 +37,7 @@ body {
   flex-direction: row;
   right: 0;
 }
+
 
 
 .bell-icon {
@@ -118,6 +124,18 @@ body {
     "."
     ".";
 }
+
+
+
+
+/* -------------------------------------
+
+            MEDIA QUARIES
+
+ --------------------------------------*/
+
+
+
 @media screen and (min-width: 768px) {
   .grid-container {
     grid-template-areas:
