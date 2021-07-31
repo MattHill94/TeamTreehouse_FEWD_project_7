@@ -20,6 +20,7 @@ alertBanner.addEventListener('click', e =>{
     }
 });
 
+
 form.addEventListener('submit', e =>{
     //let userName = user.options[user.selectedIndex].text;
     console.log(user.value);
@@ -41,7 +42,7 @@ form.addEventListener('submit', e =>{
 let messageShown;
 
 function createMessages(){
-    if(popup.childNodes.length==0 && dot.style.display !== "none"){
+    if(popup.childNodes.length===0 && dot.style.display !== "none"){
         for(let i=0; i<2; i++){
             let message = document.createElement('div');
         message.className = "popup-message";
@@ -55,7 +56,7 @@ function createMessages(){
     }
     popup.style.display = "none";
 }
-createMessages();
+
 
 
 notifications.addEventListener('click', e =>{
@@ -76,14 +77,7 @@ notifications.addEventListener('click', e =>{
     }
 });
 
-popup.addEventListener('click', e =>{
-    const element = e.target;
 
-    if(element.classList.contains("message-close")){
-        const parent = element.parentNode;
-        parent.parentNode.removeChild(parent);
-    }
-});
 
 trafficNav.addEventListener('click', e =>{
     const element = e.target;
@@ -131,7 +125,7 @@ if(localStorage.length != 0){
 
 
 saveButton.addEventListener('click', () => {
-    localStorage.setItem('emailNotificationsOn', emailCheckbox.checked );
+    localStorage.setItem('emailNotificationsOn', emailCheckbox.checked);
     localStorage.setItem('profilePublic', publicCheckbox.checked);
     localStorage.setItem('timeZone', timeZone.value );
 });
@@ -144,13 +138,3 @@ cancelButton.addEventListener('click', ()=>{
     location.reload();
 
 });
-
-
-
-
-
-
-
-
-
-
