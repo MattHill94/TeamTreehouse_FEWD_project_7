@@ -4,8 +4,8 @@ const popup = document.getElementById("popup");
 const dot = document.getElementById("dot");
 const user= document.getElementById("userField");
 const message = document.getElementById("messageField");
-const form = document.getElementById("form");
 let trafficNav = document.querySelector(".traffic-nav");
+const send = document.getElementById("send");
 
 alertBanner.innerHTML =
 `<div class="alert-banner">
@@ -21,22 +21,19 @@ alertBanner.addEventListener('click', e =>{
 });
 
 
-form.addEventListener('submit', e =>{
-    //let userName = user.options[user.selectedIndex].text;
-    console.log(user.value);
-    if(user.value === "" && message.value=== ""){
-        alert("Please fill out user and messages fields before sending");
-        e.preventDefault();
-    }else if(user.value === ""){
-        alert("Please fill out user field before sending");
-        e.preventDefault();
-    }else if(message.value === ""){
-        alert("Please fill out message field before sending");
-        e.preventDefault();
-    }else{
-        alert(`Message succesfully sent to: ${user.value}`)
-    }
-} );
+send.addEventListener('click', () => {
+  if (user.value === "" && message.value === "") {
+    alert("Please fill out user and message fields before sending");
+  } else if (user.value === "") {
+    alert("Please fill out user field before sending");
+  } else if (message.value === "") {
+    alert("Please fill out message field before sending");
+  } else {
+    alert(`Message successfully sent to: ${user.value}`);
+    document.getElementById("submissionRld").reset();
+    // Line 231: for this project, not really correct, but for the effect of clearing the form after proper submission, it serves its specific purpose.
+  }
+});
 
 //create messages, but do not show
 let messageShown;
