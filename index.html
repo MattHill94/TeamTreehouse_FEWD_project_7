@@ -51,6 +51,8 @@
           </svg>
     </a>
 </nav>
+
+
 <main class="main">
     <div class="main-header">
         <h2 class="headline">Dashboard</h2>
@@ -63,6 +65,8 @@
     <div class="alert" id="alert">
 <!--JS will insert alert here-->
     </div>
+
+
 
 
 <!-- Line Graph Charts -->
@@ -133,6 +137,7 @@
         </div>
     </div>
 </div>
+
 <!--  New Members Widget -->
 <section class="members" id="members">
     <h3>NEW MEMBERS</h3>
@@ -165,7 +170,6 @@
         <div class="members-text">
             <p>Dan Oliver</p>
             <a href="mailto:dan.oliver82@example.com">dan.oliver82@example.com</a>
-
         </div>
         <p class="post-date">10/15/20</p>
     </div>
@@ -222,9 +226,9 @@
 <!--     Local Settings Widget   -->
 <section class="settings" id="settings">
     <h3>SETTINGS</h3>
-    <div class="toggle-container">
-        <label class="switch-light switch-ios" onclick="">
-            <input type="checkbox">
+    <div class="toggle-container" >
+        <label class="switch-light switch-ios"  onclick="">
+            <input type="checkbox" id="emailSettings">
             <strong>Send Email Notifications</strong>
             <span class="toggle-switch">
             <span>OFF</span>
@@ -232,8 +236,9 @@
             <a></a>
             </span>
         </label>
-        <label class="switch-light switch-ios" onclick="">
-            <input type="checkbox">
+
+        <label class="switch-light switch-ios"  onclick="">
+            <input type="checkbox" id="publicSettings">
             <strong>Set Profile to Public</strong>
             <span class="toggle-switch">
             <span>OFF</span>
@@ -242,18 +247,23 @@
             </span>
         </label>
     </div>
+
+    <label for="timezone"></label>
     <select class="form-field" id="timezone">
-        <option disabled selected>Select a Timezone</option>
-        <option>Eastern</option>
-        <option>Central</option>
-        <option>Mountain</option>
-        <option>Pacific</option>
+        <option selected disabled> Select a Timezone</option>
+        <option value="Eastern"> Eastern </option>
+        <option value="Central"> Central </option>
+        <option value="Mountain"> Mountain </option>
+        <option value="Pacific"> Pacific </option>
         <!-- more options -->
     </select>
+
+
     <div class="settings-button">
         <button class="button-primary" id="save">Save</button>
         <button class="button-disabled" id="cancel">Cancel</button>
     </div>
+
 </section>
 
 </main>
