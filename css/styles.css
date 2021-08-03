@@ -457,6 +457,7 @@ label strong{
     .members-text{
         margin-left: 10px;
         display: block;
+        text-align: left;
     }
     .widget-container-full{
         width: 90vw;
