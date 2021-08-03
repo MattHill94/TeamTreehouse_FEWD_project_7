@@ -7,12 +7,15 @@ const message = document.getElementById("messageField");
 let trafficNav = document.querySelector(".traffic-nav");
 const send = document.getElementById("send");
 
+
 alertBanner.innerHTML =
 `<div class="alert-banner">
     <p><strong>Alert:</strong> You have unread messages</p>
     <p class="alert-banner-close"> X </p>
     </div>
 `
+
+
 alertBanner.addEventListener('click', e =>{
     const element = e.target;
     if(element.classList.contains("alert-banner-close")){
@@ -55,7 +58,6 @@ function createMessages(){
 }
 
 
-
 notifications.addEventListener('click', e =>{
     const element = e.target;
     //delete dot, when messages show for first time
@@ -73,6 +75,7 @@ notifications.addEventListener('click', e =>{
 
     }
 });
+
 
 
 
@@ -108,7 +111,7 @@ const saveButton = document.getElementById("save");
 const cancelButton = document.getElementById("cancel");
 
 //set default settings
-if(localStorage.length != 0){
+if(localStorage.length !== 0){
     localStorage.getItem('emailNotificationsOn') === "false"?
         emailCheckbox.checked = false:
         emailCheckbox.checked = true;
