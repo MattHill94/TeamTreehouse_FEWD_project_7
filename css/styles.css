@@ -30,7 +30,8 @@ canvas{
     flex-direction: row;
     justify-content: space-between;
 }
-.alert{
+.alert,
+.popup-message{
     background-color: rgb(127, 113, 192);
     color: white;
     border-radius: 5px;
@@ -55,7 +56,7 @@ body{
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
-    grid-template-areas: "header""navigation" "main";
+    grid-template-areas: "header" "navigation" "main";
 }
 .header{
     grid-area: header;
@@ -103,6 +104,21 @@ body{
     position: relative;
     top: -38px;
     left: 25px;
+}
+#popup {
+    background-color: white;
+    color: rgb(76, 18, 143);
+    border-radius: 5px;
+    margin: 3px;
+    padding: 3px;
+    position: absolute;
+    right: 11vw;
+    top: 15vh;
+}
+#popupMessage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .active-user {
     display: flex;
@@ -427,6 +443,7 @@ label strong{
         grid-template-columns: 50%;
         grid-template-areas: 
         "alert alert"
+        "alert""alert"
         "traffic traffic"
         "daily mobile"
         "social social"
