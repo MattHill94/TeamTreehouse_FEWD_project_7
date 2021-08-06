@@ -1,12 +1,11 @@
 const alertBanner = document.getElementById("alert");
 const notifications = document.getElementById("notifications");
-const popup = document.getElementById("popup");
+const popup = document.getElementById('popup');
 const dot = document.getElementById("dot");
 const user= document.getElementById("userField");
 const message = document.getElementById("messageField");
 let trafficNav = document.querySelector(".traffic-nav");
 const send = document.getElementById("send");
-
 
 alertBanner.innerHTML =
 `<div class="alert-banner">
@@ -14,7 +13,6 @@ alertBanner.innerHTML =
     <p class="alert-banner-close"> X </p>
     </div>
 `
-
 
 alertBanner.addEventListener('click', e =>{
     const element = e.target;
@@ -58,24 +56,48 @@ function createMessages(){
 }
 
 
-notifications.addEventListener('click', e =>{
-    const element = e.target;
-    //delete dot, when messages show for first time
-    dot.style.display = "none";
-    //only clicking on messages or bell should hide/show messages
-    if(element.className!=="message-close"){
+
+
+function createPopup (){
+if (popup.childNodes.length === 0 && dot.style.display !== 'none') {
+    for ( let i = 0; i < 2; i++) {
+            alertWindow = document.createElement('div');
+            alertWindow.id = 'popupMessage';
+            alertWindow.innerHTML = `
+            <p>You have a friend request!</p>
+            <p class='message-close'>X</p> 
+            `;
+            popup.appendChild(alertWindow);
+            }
+        }
+        popup.style.display = 'none';
+    }
+createPopup();
+
+notifications.addEventListener('click', (e) =>{
+    dot.style.display = 'none';
+    let element = e.target;
+    if (element.className !== 'message-close'){
         if(!messageShown){
             popup.style.display = "block";
             messageShown=true;
         }
         else{
             popup.style.display = "none";
+            popup.style.width = '1vw';
             messageShown= false;
         }
-
     }
 });
 
+popup.addEventListener('click', (e) =>{
+    let element = e.target;
+    if ( element.classList.contains('message-close')){
+        const parentNode = element.parentNode;
+        parentNode.parentNode.classList.add('hiddenPopup');
+        parentNode.parentNode.removeChild(parentNode);
+        }
+});
 
 
 
