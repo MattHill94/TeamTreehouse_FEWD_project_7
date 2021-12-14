@@ -129,11 +129,23 @@ body{
 .student-name{
     margin-left: 10px;
 }
+
+.nav-sticky {
+    grid-area: navigation;
+    background-color:rgb(70, 67, 99);
+    display: flex;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+}
+
 .navigation {
     grid-area: navigation;
     background-color:rgb(70, 67, 99);
     display: flex;
     justify-content: space-evenly;
+    position: sticky;
+    top: 0;
 }
 .navigation a{
     display: flex;
@@ -307,7 +319,7 @@ section{
     height: 200px;
 }
 
-.button-primary, 
+.button-primary,
 .button-disabled{
     background-color: rgb(127, 113, 192);
     color:white;
@@ -385,11 +397,25 @@ label strong{
     .header{
         display: flex;
     }
-    .navigation{
+.nav-sticky {
+    grid-area: navigation;
+    background-color:rgb(70, 67, 99);
+    display: flex;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+            display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+}
+
+
+    .navigation {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
     }
+
     .icon{
         height: 100%;
         width: auto;
@@ -433,7 +459,7 @@ label strong{
     }
     .mobile {
         grid-column: 2 / span 1;
-        grid-row-start: 4; 
+        grid-row-start: 4;
     }
     .activity, .settings{
         grid-column-start: 1;
@@ -441,7 +467,7 @@ label strong{
     }
       .main{
         grid-template-columns: 50%;
-        grid-template-areas: 
+        grid-template-areas:
         "alert alert"
         "alert""alert"
         "traffic traffic"
